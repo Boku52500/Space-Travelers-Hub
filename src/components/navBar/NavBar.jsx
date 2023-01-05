@@ -14,11 +14,19 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="dark">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="white"
+      variant="dark"
+      className="border-bottom"
+    >
       <Container>
         <Navbar.Brand href="#home" className="d-flex">
-          <img className="logo" src={Logo} alt="logo" />
-          <h2 className="ps-3 text-dark">Space Travelers Hub</h2>
+          <div className="logo d-flex align-items-center py-2">
+            <img className="logo-img" src={Logo} alt="logo" />
+            <h2 className="ps-3 text-dark">Space Travelers Hub</h2>
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -27,12 +35,7 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#rockets">
-              <NavLink
-                style={activeLink}
-                to="/"
-                className="text-primary link"
-                activeStyle="active"
-              >
+              <NavLink style={activeLink} to="/" className="text-primary link">
                 Rockets
               </NavLink>
             </Nav.Link>
@@ -41,7 +44,6 @@ const NavBar = () => {
                 style={activeLink}
                 to="/missions"
                 className="text-primary link"
-                activeStyle="active"
               >
                 Missions
               </NavLink>
@@ -51,7 +53,6 @@ const NavBar = () => {
                 style={activeLink}
                 to="/profile"
                 className="text-primary link"
-                activeStyle="active"
               >
                 My Profile
               </NavLink>
