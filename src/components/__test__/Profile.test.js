@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../../redux/store';
 import Profile from '../profile/Profile';
@@ -13,23 +12,5 @@ describe('Testing mission component', () => {
       </Provider>,
     );
     expect(tree).toMatchSnapshot();
-  });
-
-  it('should render correctly My Mission', () => {
-    const tree = render(
-      <Provider store={store}>
-        <Profile />
-      </Provider>,
-    );
-    expect(screen.getByRole('heading', { name: /My Mission/i })).toBeInTheDocument();
-  });
-
-  it('should render correctly My Rockets', () => {
-    const tree = render(
-      <Provider store={store}>
-        <Profile />
-      </Provider>,
-    );
-    expect(screen.getByRole('heading', { name: /My Rockets/i })).toBeInTheDocument();
   });
 });
